@@ -3,9 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from time import sleep
 
+@st.cache
 def carrega_dados(caminho):
     dados = pd.read_csv(caminho)
+    sleep(3)
     return dados
 
 def grafico_comparativo_por_estado(dados_2019, dados_2020, causa, estado="Brasil"):
